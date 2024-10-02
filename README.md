@@ -40,5 +40,5 @@
 
 <!-- --------------------- -->
 ### **02. React Icons**
-> [React Icons...] (https://react-icons.github.io/react-icons/)
+> [React Icons...](https://react-icons.github.io/react-icons/)
 > - `npm install react-icons`
