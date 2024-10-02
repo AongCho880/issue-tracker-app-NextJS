@@ -37,3 +37,8 @@
 > - git add .
 > - git commit -m "first commit"
 > - git push -u origin main
+
+<!-- --------------------- -->
+### **02. React Icons**
+> [React Icons...] (https://react-icons.github.io/react-icons/)
+> - `npm install react-icons`
