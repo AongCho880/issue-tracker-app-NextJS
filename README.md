@@ -42,3 +42,13 @@
 ### **02. React Icons**
 > [React Icons...](https://react-icons.github.io/react-icons/)
 > - `npm install react-icons`
+
+<!-- ------------------ -->
+### **03. Prisma Set-Up**
+> - `npm i prisma`
+> - `npx prisma init` <br>
+> This will create a `prisma` dir and `.env` file <br>
+> In `prsma/schema.prisma` change the `provider = "mysql"` in `datasource db` section. <br>
+> Create required tables in `schema.prisma`
+> - `npx prisma format` <br>
+> - `npx prisma migrate dev`
