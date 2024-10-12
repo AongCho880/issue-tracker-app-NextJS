@@ -52,3 +52,12 @@
 > Create required tables in `schema.prisma`
 > - `npx prisma format` <br>
 > - `npx prisma migrate dev`
+
+
+<!-- Buil an API -->
+### **04. Build and API**
+> Create `app/api/issues/route.ts`<br>
+> Install `Zod` for data validation
+> - `npm i zod`<br>
+> 
+
