@@ -59,5 +59,6 @@
 > Create `app/api/issues/route.ts`<br>
 > Install `Zod` for data validation
 > - `npm i zod`<br>
-> 
+> Create PrismaClient `prisma/client.ts` <br>
+> Copy code form [here](https://www.prisma.io/docs/orm/more/help-and-troubleshooting/help-articles/nextjs-prisma-client-dev-practices) `db.ts` and past to `client.ts`
 
