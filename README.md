@@ -59,6 +59,32 @@
 > Create `app/api/issues/route.ts`<br>
 > Install `Zod` for data validation
 > - `npm i zod`<br>
+
 > Create PrismaClient `prisma/client.ts` <br>
 > Copy code form [here](https://www.prisma.io/docs/orm/more/help-and-troubleshooting/help-articles/nextjs-prisma-client-dev-practices) `db.ts` and past to `client.ts`
 
+
+<!-- Set-Up Radix UI -->
+### **05. Set-Up Radix UI**
+> [Visit Radix UI website](https://www.radix-ui.com/themes/docs/overview/getting-started)<br>
+
+> Install Radix UI<br>
+> - `npm install @radix-ui/themes`
+
+> Import the global CSS file at the root of application (`app\layout.tsx`).
+> - `import "@radix-ui/themes/styles.css";`
+
+> Add Theme to the application, wrapping the root component inside of body.
+> ```javascript
+>    import { Theme } from "@radix-ui/themes";
+>    export default function () {
+>     return (
+>       <html>
+>          <body>
+>           <Theme>
+>            <MyApp />
+>          </Theme>
+>        </body>
+>      </html>
+>    );
+> }
