@@ -11,13 +11,17 @@ import "easymde/dist/easymde.min.css";
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import SimpleMDE from "react-simplemde-editor";
-import delay from 'delay';
+import dynamic from 'next/dynamic';
 
 type IssueForm = z.infer<typeof CreateIssueSchema>
 
+const SimpleMDE = dynamic(
+  () => import('react-simplemde-editor'), 
+  { ssr: false }
+);
 
-const NewIssue = async () => {
+
+const NewIssue = () => {
   const router = useRouter();
   const { register, control, handleSubmit, formState: { errors } } = useForm<IssueForm>({
     resolver: zodResolver(CreateIssueSchema)
@@ -38,7 +42,7 @@ const NewIssue = async () => {
     }
   });
 
-  await delay(1000);
+
 
   return (
     <div className='max-w-xl'>
