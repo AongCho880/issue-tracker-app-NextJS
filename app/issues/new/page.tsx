@@ -1,22 +1,23 @@
 'use client';
 
-import { Button, Callout, Text, TextField } from '@radix-ui/themes'
-import { useForm, Controller } from 'react-hook-form';
-import axios from 'axios';
-import React, { useState } from 'react'
-import { useRouter } from 'next/navigation';
-import SimpleMDE from "react-simplemde-editor";
-import "easymde/dist/easymde.min.css";
-import { zodResolver } from '@hookform/resolvers/zod';
-import { CreateIssueSchema } from '@/app/validationSchemas';
 import ErrorMessage from '@/app/components/ErrorMessage';
-import { z } from 'zod';
 import Spinner from '@/app/components/Spinner';
+import { CreateIssueSchema } from '@/app/validationSchemas';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Button, TextField } from '@radix-ui/themes';
+import axios from 'axios';
+import { z } from 'zod';
+import "easymde/dist/easymde.min.css";
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+import { Controller, useForm } from 'react-hook-form';
+import SimpleMDE from "react-simplemde-editor";
+import delay from 'delay';
 
 type IssueForm = z.infer<typeof CreateIssueSchema>
 
 
-const NewIssue = () => {
+const NewIssue = async () => {
   const router = useRouter();
   const { register, control, handleSubmit, formState: { errors } } = useForm<IssueForm>({
     resolver: zodResolver(CreateIssueSchema)
@@ -36,6 +37,8 @@ const NewIssue = () => {
       console.log(error)
     }
   });
+
+  await delay(1000);
 
   return (
     <div className='max-w-xl'>
