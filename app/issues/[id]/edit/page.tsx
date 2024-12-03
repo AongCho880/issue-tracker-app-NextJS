@@ -13,8 +13,6 @@ const EditIssuePage = async ({ params } : Props) => {
     where: { id: parseInt(params.id) }
   });
 
-  console.log("Receive ...........");
-
   if(!issue) notFound();
 
   return (
