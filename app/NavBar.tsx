@@ -7,6 +7,8 @@ import { usePathname } from 'next/navigation';
 import React from 'react'
 import { BsFillBugFill } from "react-icons/bs";
 import classnames from "classnames";
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 export const NavBar = () => {
 
@@ -64,7 +66,7 @@ const NavLinks = () => {
 const AuthStatus = () => {
   const { status, data: session } = useSession();
 
-  if (status === "loading") return null;
+  if (status === "loading") return <Skeleton width='3rem'/>;
 
   if (status === "unauthenticated")
     return <Link className='nav-link' href="/api/auth/signin">Login</Link>;
