@@ -1,14 +1,13 @@
 "use client";
 
 import { Avatar, Box, Container, DropdownMenu, Flex, Text } from '@radix-ui/themes';
-import { useSession } from 'next-auth/react';
-import Link from 'next/link'
-import { usePathname } from 'next/navigation';
-import React from 'react'
-import { BsFillBugFill } from "react-icons/bs";
 import classnames from "classnames";
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
+import { useSession } from 'next-auth/react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { BsFillBugFill } from "react-icons/bs";
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 export const NavBar = () => {
 
