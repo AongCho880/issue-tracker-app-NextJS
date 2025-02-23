@@ -11,8 +11,8 @@
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone https://github.com/AongCho880/issue-tracker-app-NextJS.git
+cd issue-tracker-app-NextJS
 ```
 
 ### 2. Install Dependencies
@@ -21,22 +21,18 @@ npm install
 ```
 
 ### 3. Environment Setup
-1. Create `.env.local` file:
+1. Create `.env` file:
 ```bash
-cp .env.example .env.local
+cp .env
 ```
 
-2. Populate required values in `.env.local`:
+2. Populate required values in `.env`:
 ```env
-DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE?schema=public"
+DATABASE_URL="mysql://USER:PASSWORD@HOST:PORT/DATABASE"
 NEXTAUTH_SECRET="your-generated-secret-here"  # Use output from: openssl rand -base64 32
 NEXTAUTH_URL="http://localhost:3000"
 
-# For GitHub OAuth (optional)
-GITHUB_CLIENT_ID="your-github-client-id"
-GITHUB_CLIENT_SECRET="your-github-client-secret"
-
-# For Google OAuth (optional)
+# For Google OAuth 
 GOOGLE_CLIENT_ID="your-google-client-id"
 GOOGLE_CLIENT_SECRET="your-google-client-secret"
 ```
@@ -48,13 +44,6 @@ npx prisma generate
 ```
 
 ### 5. OAuth Configuration (Choose Providers)
-
-#### GitHub Setup
-1. Create OAuth App: [GitHub Developer Settings](https://github.com/settings/developers)
-2. Set callback URL to:
-```text
-http://localhost:3000/api/auth/callback/github
-```
 
 #### Google Setup
 1. Create credentials: [Google Cloud Console](https://console.cloud.google.com/)
@@ -145,12 +134,6 @@ openssl rand -base64 32  # Copy output to NEXTAUTH_SECRET
 ```
 
 2. **Configure Providers** (Choose one or both):
-
-### GitHub OAuth
-1. Go to [GitHub Developer Settings](https://github.com/settings/developers)
-2. Create New OAuth App:
-   - **Homepage URL**: `http://localhost:3000`
-   - **Authorization callback URL**: `http://localhost:3000/api/auth/callback/github`
 
 ### Google OAuth
 1. Go to [Google Cloud Console](https://console.cloud.google.com/)
